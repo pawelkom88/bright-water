@@ -22,7 +22,6 @@
   font-weight: bold;
   color: $white;
   letter-spacing: 0.03em;
-  line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 12px;
 }
@@ -30,10 +29,10 @@
 .paragraph {
   font-size: clamp(1rem, 0.8214rem + 0.5714vw, 1.5rem);
   color: $white;
-  margin-top: -4rem;
+  margin-top: -1rem;
 }
 
-.button {
+.cta {
   font-weight: bold;
   color: $dark-clr;
 
@@ -49,11 +48,6 @@
   @include transition(all, 0.2s, ease-in-out);
 
   &:hover {
-    background-color: $brand-secondary;
-    color: $white;
-    transform: translateY(-2px);
-    letter-spacing: 2px;
-    @include box-shadow;
-    @include transition(all, 0.2s, ease-in-out);
+    @include button-hover-effect;
   }
 }
