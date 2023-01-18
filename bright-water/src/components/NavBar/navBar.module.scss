@@ -1,0 +1,54 @@
+@import "styles/mixins";
+@import "styles/breakpoints";
+@import "styles/variables";
+
+.header {
+  @include flex(space-evenly, center);
+  background: transparent;
+
+  @media (max-width: $tablet) {
+    @include flex(space-between, center);
+    padding: 0.5rem;
+  }
+}
+
+.navigation {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.listItems {
+  display: flex;
+  font-weight: bold;
+  color: $brand-primary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  .listItem {
+    padding: 0 1rem;
+
+    &:hover {
+      color: $brand-secondary;
+      @include transition(color, 0.3s, ease-in-out);
+    }
+  }
+}
+
+.logo {
+  @media (max-width: $tablet) {
+    max-width: 10rem;
+  }
+}
+
+.cart {
+  max-width: 2.5rem;
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    transform: translateY(-2px);
+    border-radius: 100%;
+    @include box-shadow;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+}
