@@ -1,0 +1,11 @@
+@import "styles/mixins";
+@import "styles/breakpoints";
+
+.filterIcon {
+  width: 2.5rem;
+  @include icon-hover-effect;
+
+  @media (max-width: $mobile) {
+    width: 2rem;
+  }
+}
