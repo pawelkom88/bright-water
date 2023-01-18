@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import commerce from "../../lib/commerce";
 import { useEffect, useState } from "react";
-import classes from "./productPage.sass";
+import classes from "./productPage.module.scss";
 
 export default function ProductPage() {
   const [product, setProduct] = useState("");
