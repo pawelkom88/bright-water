@@ -4,20 +4,16 @@ import NavBar from "components/NavBar/NavBar";
 import Footer from "components/Footer/Footer";
 import About from "pages/about/About";
 import ProductPage from "pages/product-page/ProductPage";
-import useFetch from "hooks/useFetch";
 import { navItems } from "helpers/helpers";
 import "styles/App.scss";
 
 const App = () => {
-  // const { products } = useFetch();
-
   return (
     <>
       <Router>
         <NavBar navItems={navItems} />
         <Switch>
           <Route exact path="/">
-            {/* <Home productData={products} /> */}
             <Home />
           </Route>
           <Route exact path="/about">
