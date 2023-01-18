@@ -1,0 +1,59 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 72px); //72px header height
+
+  @include flex(center, center);
+  flex-direction: column;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/images/hero.webp") no-repeat center center;
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heading {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: bold;
+  color: $white;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}
+
+.paragraph {
+  font-size: clamp(1rem, 0.8214rem + 0.5714vw, 1.5rem);
+  color: $white;
+  margin-top: -4rem;
+}
+
+.button {
+  font-weight: bold;
+  color: $dark-clr;
+
+  background-color: $white;
+  border-radius: 4rem;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    background-color: $brand-secondary;
+    color: $white;
+    transform: translateY(-2px);
+    letter-spacing: 2px;
+    @include box-shadow;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+}
