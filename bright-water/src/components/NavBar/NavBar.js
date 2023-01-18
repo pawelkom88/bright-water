@@ -6,7 +6,7 @@ import MobileMenuBtn from "./mobile-menu/MobileMenuBtn";
 
 export default function NavBar({ navItems }) {
   return (
-    <header className={classes.header}>
+    <header className={`container ${classes.header}`}>
       <nav className={classes.navigation}>
         <ul className={classes.listItems}>
           {navItems.map((item, index) => (
