@@ -1,12 +1,16 @@
 import ViewProductButton from "components/ViewProductButton/ViewProductButton";
-import classes from "./productCard.sass";
+import classes from "./productCard.module.scss";
 
-export default function ProductCard({ product }) {
-  //Example of a product card: https://dribbble.com/shots/15208151-Furniture-shop-Product-card-design
+export default function ProductCard({ productDetails }) {
+  const { name, image, description, price, permalink } = productDetails;
+
   return (
-    <>
-      <h4>Product Card Component</h4>
-      <ViewProductButton />
-    </>
+    <div>
+      <img src={image.url} alt={name} />
+      <h4>{name}</h4>
+      {description}
+      <span>{price.formatted_with_symbol}</span>
+      <ViewProductButton productPermaLink={permalink} />
+    </div>
   );
 }
