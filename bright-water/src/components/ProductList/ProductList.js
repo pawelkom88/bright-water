@@ -1,12 +1,34 @@
+import useFetch from "hooks/useFetch";
 import ProductCard from "../ProductCard/ProductCard";
-import classes from "./productList.sass";
+import Spinner from "components/spinner/Spinner";
+import ProductsFilter from "components/ProductsFilter/ProductsFilter";
+import Select from "components/select/Select";
+import Button from "components/Button/Button";
+import classes from "./productList.module.scss";
 
-//Example of a product list: https://www.edinburghgin.com/shop/london-dry
-export default function ProductList({ products }) {
+export default function ProductList() {
+  const { products } = useFetch();
+
   return (
-    <>
-      <h2>Product List Component</h2>
-      <ProductCard />
-    </>
+    <main className="container">
+      <section id="products">
+        <h2 className={classes.heading}>We’ve got it all for you</h2>
+        <div className={classes.productsFilter}>
+          <ProductsFilter />
+          <div className={classes.divider}></div>
+          <Select />
+        </div>
+        <div className={classes.products}>
+          {products.length ? (
+            products.map(product => {
+              return <ProductCard key={product.id} productDetails={product} />;
+            })
+          ) : (
+            <Spinner />
+          )}
+        </div>
+        <Button className={classes.button}>Load more</Button>
+      </section>
+    </main>
   );
 }

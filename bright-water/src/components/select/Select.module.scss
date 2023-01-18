@@ -1,0 +1,20 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.select {
+  color: $white;
+  border: none;
+  background-color: $brand-primary;
+  padding: 0.5rem 1rem;
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  & option {
+    &:hover {
+      background-color: $brand-secondary;
+    }
+  }
+}
