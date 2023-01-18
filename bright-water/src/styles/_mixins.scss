@@ -10,5 +10,23 @@
 
 @mixin transition($property, $duration, $effect) {
   transition: all 0.2s ease-in-out;
+}
 
+@mixin icon-hover-effect {
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    transform: translateY(-2px);
+    border-radius: 100%;
+    @include box-shadow;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+}
+
+@mixin button-hover-effect {
+  background-color: $brand-secondary;
+  color: $white;
+  transform: translateY(-2px);
+  @include box-shadow;
+  @include transition(all, 0.2s, ease-in-out);
 }

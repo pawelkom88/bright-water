@@ -3,11 +3,9 @@
 @import "styles/variables";
 
 .header {
-  @include flex(space-evenly, center);
-  background: transparent;
+  @include flex(space-between, center);
 
   @media (max-width: $tablet) {
-    @include flex(space-between, center);
     padding: 0.5rem;
   }
 }
@@ -20,18 +18,22 @@
 
 .listItems {
   display: flex;
+  justify-content: space-between;
   font-weight: bold;
   color: $brand-primary;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 0;
 
   .listItem {
-    padding: 0 1rem;
-
     &:hover {
       color: $brand-secondary;
       @include transition(color, 0.3s, ease-in-out);
     }
+  }
+
+  .listItem:first-child {
+    margin-right: 1rem;
   }
 }
 
@@ -43,12 +45,5 @@
 
 .cart {
   max-width: 2.5rem;
-  @include transition(all, 0.2s, ease-in-out);
-
-  &:hover {
-    transform: translateY(-2px);
-    border-radius: 100%;
-    @include box-shadow;
-    @include transition(all, 0.2s, ease-in-out);
-  }
+  @include icon-hover-effect;
 }
