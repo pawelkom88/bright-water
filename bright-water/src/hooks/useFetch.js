@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import commerce from "../lib/commerce";
+import commerce from "lib/commerce";
 
 export default function useFetch() {
   const [products, setProducts] = useState([]);

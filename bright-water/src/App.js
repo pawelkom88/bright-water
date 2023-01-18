@@ -1,16 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/home/Home";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
-import About from "./pages/about/About";
-import ProductPage from "./pages/product-page/ProductPage";
-import useFetch from "./hooks/useFetch";
-import { navItems } from "./helpers/helpers";
-import "./styles/App.css";
+import Home from "pages/home/Home";
+import NavBar from "components/NavBar/NavBar";
+import Footer from "components/Footer/Footer";
+import About from "pages/about/About";
+import ProductPage from "pages/product-page/ProductPage";
+import useFetch from "hooks/useFetch";
+import { navItems } from "helpers/helpers";
+import "styles/App.scss";
 
 const App = () => {
-  //Here is the product list data :)
-  const { products } = useFetch();
+  // const { products } = useFetch();
 
   return (
     <>
@@ -18,7 +17,8 @@ const App = () => {
         <NavBar navItems={navItems} />
         <Switch>
           <Route exact path="/">
-            <Home productData={products} />
+            {/* <Home productData={products} /> */}
+            <Home />
           </Route>
           <Route exact path="/about">
             <About />
