@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import commerce from "./lib/commerce";
+import commerce from "../../lib/commerce";
 import { useEffect, useState } from "react";
 import classes from "./productPage.sass";
 
@@ -14,10 +14,10 @@ export default function ProductPage() {
   const fetchProduct = () => {
     commerce.products
       .retrieve(productPermaLink, { type: "permalink" })
-      .then((product) => {
+      .then(product => {
         setProduct(product);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log("There was an error fetching the products", error);
       });
   };

@@ -1,35 +1,16 @@
-import React, { useState, useEffect } from "react";
-import commerce from "./lib/commerce";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
+import Home from "./pages/home/Home";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import About from "./About";
-import ProductPage from "./ProductPage";
+import About from "./pages/about/About";
+import ProductPage from "./pages/product-page/ProductPage";
+import useFetch from "./hooks/useFetch";
+import { navItems } from "./helpers/helpers";
+import "./styles/App.css";
 
 const App = () => {
   //Here is the product list data :)
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = () => {
-    commerce.products
-      .list()
-      .then((products) => {
-        setProducts(products.data);
-      })
-      .catch((error) => {
-        console.log("There was an error fetching the products", error);
-      });
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const navItems = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-  ];
+  const { products } = useFetch();
 
   return (
     <>
