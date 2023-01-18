@@ -1,0 +1,14 @@
+@import "styles/breakpoints";
+
+.mobileMenuBtn {
+  margin-top: 5px;
+  cursor: pointer;
+
+  & img {
+    width: 2rem;
+  }
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
