@@ -1,5 +1,5 @@
 import ViewProductButton from "components/ViewProductButton/ViewProductButton";
-import classes from "./ProductCard.module.scss";
+import classes from "./productCard.module.scss";
 import { stripHTMLTag } from "helpers/helpers";
 
 export default function ProductCard({ productDetails }) {

@@ -4,7 +4,7 @@ import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
 import Select from "components/select/Select";
 import Button from "components/Button/Button";
-import classes from "./ProductList.module.scss";
+import classes from "./productList.module.scss";
 
 export default function ProductList() {
   const { products } = useFetchProducts();

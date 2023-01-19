@@ -6,7 +6,7 @@ import Spinner from "components/spinner/Spinner";
 import Button from "components/Button/Button";
 import { BackIcon, HeartIcon, HeartFilledIcon } from "helpers/assets";
 import { stripHTMLTag, removeDuplicateObjects } from "helpers/helpers";
-import classes from "./ProductPage.module.scss";
+import classes from "./productPage.module.scss";
 
 const product = {
   id: "prod_NqKE50BR4wdgBL",
