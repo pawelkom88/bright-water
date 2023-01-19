@@ -1,6 +1,6 @@
 import classes from "./topBannerSection.module.scss";
 
-export default function TopBannerSection({ topBannerImage }) {
+export default function TopBannerSection() {
   return (
     <section className={classes.hero}>
       <h1 className={classes.heading}>The sip of Joy</h1>
