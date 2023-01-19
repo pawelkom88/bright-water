@@ -8,9 +8,9 @@ export default function NavBar({ navItems }) {
   return (
     <header className={`container ${classes.header}`}>
       <nav className={classes.navigation}>
-        <ul className={classes.listItems}>
+        <ul className={classes['navigation-items']}>
           {navItems.map((item, index) => (
-            <li className={classes.listItem} key={index}>
+            <li className={classes['navigation-item']} key={index}>
               <Link to={item.link}>{item.name}</Link>
             </li>
           ))}

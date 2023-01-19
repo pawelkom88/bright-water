@@ -17,25 +17,24 @@ $border-opacity: rgba(20, 54, 93, 0.1);
   @media (max-width: $tablet) {
     display: none;
   }
-}
+  &-items {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: $brand-primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-.listItems {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  color: $brand-primary;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  .listItem {
+  &-item {
     &:hover {
       color: $brand-secondary;
       @include transition(color, 0.3s, ease-in-out);
     }
-  }
 
-  .listItem:first-child {
-    margin-right: 1rem;
+    &:first-child {
+      margin-right: 1rem;
+    }
   }
 }
 
