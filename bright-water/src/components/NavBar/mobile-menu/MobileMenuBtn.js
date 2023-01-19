@@ -1,20 +1,20 @@
 import { useState } from "react";
 import Button from "components/Button/Button";
-import { menuIconOpen, menuIconClose } from "helpers/assets";
+import SidebarMenu from "components/sidebar-menu/Sidebar-menu";
+import { menuIconOpen } from "helpers/assets";
 import classes from "./MobileMenuBtn.module.scss";
 
 export default function MobileMenuBtn() {
-  const [toggleIcon, setToggleIcon] = useState(true);
-
-  const mobileMenuIcon = toggleIcon ? (
-    <img src={menuIconOpen.src} alt={menuIconOpen.alt} />
-  ) : (
-    <img src={menuIconClose.src} alt={menuIconClose.alt} />
-  );
+  const [toggleIcon, setToggleIcon] = useState(false);
 
   return (
-    <Button onClick={() => setToggleIcon(!toggleIcon)} className={classes.mobileMenuBtn}>
-      {mobileMenuIcon}
-    </Button>
+    <>
+      <Button onClick={() => setToggleIcon(!toggleIcon)} className={classes["mobile-menu-button"]}>
+        <img src={menuIconOpen.src} alt={menuIconOpen.alt} />
+      </Button>
+      <SidebarMenu onToggle={setToggleIcon} condition={toggleIcon}>
+        Menu
+      </SidebarMenu>
+    </>
   );
 }
