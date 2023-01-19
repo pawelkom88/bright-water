@@ -1,0 +1,11 @@
+@import "styles/variables";
+
+.stepper-input {
+  height: 2.2rem;
+  display: flex;
+
+  & input {
+    width: 4rem;
+    border: 1px solid $brand-primary;
+  }
+}
