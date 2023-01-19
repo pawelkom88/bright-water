@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Overlay from "components/modal/Overlay";
 import Button from "components/Button/Button";
-import classes from "./Modal.module.scss";
 import FocusLock from "react-focus-lock";
 import { CloseIcon } from "helpers/assets";
+import classes from "./Modal.module.scss";
 
 export default function Modal({ children, size }) {
-  const [isOpen, setIsopen] = useState(true);
+  const [isOpen, setIsopen] = useState(false);
+
+  // Show modal after 5s
+  // If I had more time I would implement local storage hook in order to prevent displaying modal on every page load
+  useEffect(() => {
+    const timer = setTimeout(() => setIsopen(true), 5000);
+
+    return () => clearTimeout(timer);
+  }, [setIsopen]);
 
   function closeModal() {
     setIsopen(false);
