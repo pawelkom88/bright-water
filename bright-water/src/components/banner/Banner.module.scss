@@ -1,0 +1,43 @@
+@import "styles/breakpoints";
+@import "styles/mixins";
+@import "styles/variables";
+
+.banner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  &-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-description {
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  &-button {
+    font-weight: bold;
+    color: $white;
+
+    background-color: $brand-secondary;
+    border-radius: 4rem;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+
+    &:hover {
+      @include button-hover-effect;
+    }
+  }
+}

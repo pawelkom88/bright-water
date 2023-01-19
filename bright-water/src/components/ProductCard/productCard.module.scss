@@ -1,0 +1,33 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  @include transition(all, 0.2s, ease-in-out);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  &:hover {
+    transform: translateY(-7px);
+    @include transition(all, 0.2s, ease-in-out);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-heading {
+  font-size: clamp(1.2rem, 0.8rem + 0.5vw, 1.4rem);
+  color: $dark-clr;
+  letter-spacing: 2px;
+}
+
+
+.card-price {
+  font-size: 1.2rem;
+  color: $brand-primary;
+  margin: 1rem 0;
+}
