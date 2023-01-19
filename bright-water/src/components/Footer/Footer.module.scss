@@ -19,6 +19,7 @@
 
   &-bottom__social {
     display: flex;
+    justify-content: baseline;
     padding: 1rem 0;
 
     & .icons {
