@@ -9,7 +9,7 @@ $border-opacity: rgba(20, 54, 93, 0.1);
   @include box-shadow;
 
   @media (max-width: $mobile) {
-    margin: 3rem;
+    margin: 3rem 0;
   }
 }
 

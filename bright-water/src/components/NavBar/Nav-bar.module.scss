@@ -2,8 +2,11 @@
 @import "styles/breakpoints";
 @import "styles/variables";
 
+$border-opacity: rgba(20, 54, 93, 0.1);
+
 .header {
   @include flex(space-between, center);
+  border-bottom: 1px solid $border-opacity;
 
   @media (max-width: $tablet) {
     padding: 0.5rem;
@@ -23,7 +26,6 @@
   color: $brand-primary;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 0;
 
   .listItem {
     &:hover {

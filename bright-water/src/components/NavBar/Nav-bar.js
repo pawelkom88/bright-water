@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Button from "components/Button/Button";
 import { cartIcon, logoIcon } from "helpers/assets";
-import classes from "./navBar.module.scss";
 import MobileMenuBtn from "./mobile-menu/MobileMenuBtn";
+import classes from "./Nav-bar.module.scss";
 
 export default function NavBar({ navItems }) {
   return (
