@@ -28,7 +28,7 @@ export default function Footer({ navItems }) {
 
           <div className={classes["footer-col"]}>
             <h3 className={classes["footer-col__heading"]}>Newsletter</h3>
-            <p>You can trust us. we only send promo offers</p>
+            <p>You can trust us. We only send promo offers</p>
             <div className={classes["footer-col__newsletter"]}>
               <label htmlFor="newsletter">
                 <input
