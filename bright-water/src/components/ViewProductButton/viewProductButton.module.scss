@@ -1,0 +1,24 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: $white;
+
+  background-color: $brand-primary;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    background-color: $brand-secondary;
+    color: $white;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+}
