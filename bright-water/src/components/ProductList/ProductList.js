@@ -1,4 +1,4 @@
-import useFetchProducts from "hooks/useFetch";
+import useFetchProducts from "hooks/useFetchProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
