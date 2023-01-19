@@ -1,0 +1,94 @@
+@import "styles/mixins";
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.footer {
+  background-color: $brand-primary;
+  color: $white;
+  padding: 1rem 0;
+
+  &-top,
+  &-bottom {
+    @include flex(space-between, center);
+    flex-wrap: wrap;
+
+    @media (max-width: $mobile) {
+      justify-content: flex-start;
+    }
+  }
+
+  &-bottom__social {
+    display: flex;
+    padding: 1rem 0;
+
+    & .icons {
+      margin-right: 0.5rem;
+      @include transition(transform, 0.2s, ease-in-out);
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-2px);
+        @include transition(transform, 0.2s, ease-in-out);
+      }
+    }
+  }
+
+  &-bottom__copyright {
+    opacity: 0.8;
+  }
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+
+  @media (max-width: $mobile) {
+    align-self: baseline;
+    margin-right: auto;
+  }
+
+  &__heading {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__newsletter {
+    display: flex;
+  }
+
+  &__input {
+    border: 2px solid $white;
+
+    &::placeholder {
+      font-size: 0.7rem;
+    }
+  }
+
+  & a {
+    margin: 0.2rem;
+    opacity: 0.9;
+
+    &:hover {
+      color: $brand-secondary;
+      @include transition(color, 0.3s, ease-in-out);
+    }
+  }
+}
+
+.button {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.6rem;
+
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    color: $brand-secondary;
+    background-color: $white;
+  }
+}
