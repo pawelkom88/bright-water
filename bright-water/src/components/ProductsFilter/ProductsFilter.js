@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "components/Button/Button";
 import { filterIcon } from "helpers/assets";
 import classes from "./ProductsFilter.module.scss";
+import SidebarMenu from "components/sidebar-menu/Sidebar-menu";
 
 export default function ProductFilter() {
   const [toggleFilterMenu, setToggleFilterMenu] = useState(false);
@@ -15,10 +16,10 @@ export default function ProductFilter() {
       <Button onClick={handleFilterToggle} className={classes.filterIcon}>
         <img src={filterIcon.src} alt={filterIcon.alt} />
       </Button>
-      
-      {toggleFilterMenu && (
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque</div>
-      )}
+
+      <SidebarMenu onToggle={setToggleFilterMenu} condition={toggleFilterMenu}>
+        Filters
+      </SidebarMenu>
     </>
   );
 }
