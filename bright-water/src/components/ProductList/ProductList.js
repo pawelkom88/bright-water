@@ -1,13 +1,13 @@
-import useFetch from "hooks/useFetch";
+import useFetchProducts from "hooks/useFetch";
 import ProductCard from "../ProductCard/ProductCard";
 import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
 import Select from "components/select/Select";
 import Button from "components/Button/Button";
-import classes from "./productList.module.scss";
+import classes from "./ProductList.module.scss";
 
 export default function ProductList() {
-  const { products } = useFetch();
+  const { products } = useFetchProducts();
 
   return (
     <main className="container">
