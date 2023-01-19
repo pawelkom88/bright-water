@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import classes from "./Footer.module.scss";
 import Button from "components/Button/Button";
+import classes from "./Footer.module.scss";
 import { socialIcons } from "helpers/assets";
 
 const date = new Date().getFullYear();
