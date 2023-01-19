@@ -7,7 +7,7 @@ export default function ViewProductButton({ productPermaLink }) {
 
   return (
     <Link className={classes.button} to={`/product/${permaLink}`}>
-      View Product
+      view more
     </Link>
   );
 }
