@@ -8,6 +8,17 @@ import heart from "assets/icons/heart.svg";
 import heartFilled from "assets/icons/heart-filled.svg";
 import close from "assets/icons/close.svg";
 import BannerImage from "assets/images/banner.webp";
+import facebook from "assets/icons/facebook.svg";
+import instagram from "assets/icons/instagram.svg";
+import linkedin from "assets/icons/linkedin.svg";
+import twitter from "assets/icons/twitter.svg";
+
+export const socialIcons = [
+  { src: facebook, alt: "icon" },
+  { src: linkedin, alt: "facebook icon" },
+  { src: twitter, alt: "twitter icon" },
+  { src: instagram, alt: "instagram icon" },
+];
 
 export const cartIcon = {
   src: cart,
