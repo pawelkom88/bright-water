@@ -4,6 +4,7 @@ import NavBar from "components/NavBar/Nav-bar";
 import Footer from "components/Footer/Footer";
 import About from "pages/about/About";
 import ProductPage from "pages/product-page/ProductPage";
+import NotFound from "pages/404/NotFound";
 import { navItems } from "helpers/helpers";
 import "styles/App.scss";
 
@@ -21,6 +22,9 @@ const App = () => {
           </Route>
           <Route exact path="/product/:id">
             <ProductPage />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
         <Footer navItems={navItems} />

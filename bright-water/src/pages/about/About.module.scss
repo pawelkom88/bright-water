@@ -1,0 +1,6 @@
+@import "styles/mixins";
+
+.styles {
+  min-height: 70vh;
+  @include flex(center, center);
+}
