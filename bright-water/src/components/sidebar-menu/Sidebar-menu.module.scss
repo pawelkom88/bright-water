@@ -1,17 +1,19 @@
 @import "styles/mixins";
 @import "styles/variables";
+@import "styles/breakpoints";
 
 .sidebar {
   position: fixed;
-  inset: 0;
+  top: 0;
 
-  max-width: 80vh;
-  height: 100vh;
+  width: 0;
+  height: 100%;
 
-  background: $white;
-  z-index: 9;
-  transform: translateX(-100%);
-  @include transition(transform, 0.2s, ease-in-out);
+  background-color: $white;
+
+  overflow-x: hidden;
+
+  @include transition(all, 0.3s, ease-in-out);
 
   &-icon {
     position: absolute;
@@ -26,8 +28,24 @@
     transform: translate(-50%, 0);
   }
 }
+.left-menu-active,
+.right-menu-active {
+  position: fixed;
+  width: 25rem;
+  height: 100%;
+  @include transition(all, 0.3s, ease-in-out);
+  overflow: hidden;
+  z-index: 10;
 
-.active {
-  transform: translateX(0);
-  @include transition(transform, 0.2s, ease-in-out);
+  @media (max-width: $mobile) {
+    width: 20rem;
+  }
+}
+
+.left-menu-active {
+  border-right: 2px solid $brand-primary;
+}
+
+.right-menu-active {
+  border-left: 2px solid $brand-primary;
 }
