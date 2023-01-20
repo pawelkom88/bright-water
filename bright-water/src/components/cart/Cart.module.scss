@@ -1,0 +1,6 @@
+@import "styles/mixins";
+
+.cart {
+  max-width: 2.5rem;
+  @include icon-hover-effect;
+}
