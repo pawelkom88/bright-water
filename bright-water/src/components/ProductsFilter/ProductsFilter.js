@@ -2,24 +2,24 @@ import { useState } from "react";
 import Button from "components/Button/Button";
 import { filterIcon } from "helpers/assets";
 import classes from "./ProductsFilter.module.scss";
-import SidebarMenu from "components/sidebar-menu/Sidebar-menu";
+import MenuLeft from "components/sidebar-menu/menu-left/MenuLeft";
 
 export default function ProductFilter() {
   const [toggleFilterMenu, setToggleFilterMenu] = useState(false);
 
-  function handleFilterToggle() {
-    setToggleFilterMenu(true);
+  function handleFilterMenu() {
+    setToggleFilterMenu(!toggleFilterMenu);
   }
 
   return (
     <>
-      <Button onClick={handleFilterToggle} className={classes.filterIcon}>
+      <Button onClick={handleFilterMenu} className={classes.filterIcon}>
         <img src={filterIcon.src} alt={filterIcon.alt} />
       </Button>
 
-      <SidebarMenu onToggle={setToggleFilterMenu} condition={toggleFilterMenu}>
-        Filters
-      </SidebarMenu>
+      <MenuLeft onToggle={handleFilterMenu} condition={toggleFilterMenu}>
+        FILTERS
+      </MenuLeft>
     </>
   );
 }
