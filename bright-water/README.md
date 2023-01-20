@@ -21,6 +21,7 @@ If I had more time I would:
 - add product btn functionality
 - displayed products in cart
 - sort by category
+- improve product images 'slider'
 
 ## How to run this project ?
 - clone repo URL from Githup repo
