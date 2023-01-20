@@ -2,7 +2,7 @@
 @import "styles/variables";
 
 .card {
-  height: 38rem;
+  height: 36rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -10,7 +10,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   & img {
-    height: 80%;
+    height: 60%;
     object-fit: cover;
   }
 

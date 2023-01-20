@@ -4,8 +4,8 @@ import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
 import Select from "components/select/Select";
 import Button from "components/Button/Button";
-import classes from "./productList.module.scss";
 import { sortMethods } from "helpers/helpers";
+import classes from "./productList.module.scss";
 
 export default function ProductList({ products }) {
   const [sortState, setSortState] = useState("default");

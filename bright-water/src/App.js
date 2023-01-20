@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <NavBar navItems={navItems} />
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <Home />
