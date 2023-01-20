@@ -15,7 +15,7 @@
 - GO ABOVE AND BEYOND
 
 
-## Thing to do
+## Things to do
 If I had more time I would:
 - display Modal only on initial page visit ( store state in local storage)
 - add product btn functionality
