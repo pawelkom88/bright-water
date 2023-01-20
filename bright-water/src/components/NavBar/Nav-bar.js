@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import MobileMenuBtn from "./menu-mobile/MobileMenuBtn";
 import Cart from "components/cart/Cart";
-import { logoIcon } from "helpers/assets";
 import classes from "./Nav-bar.module.scss";
+import { logoIcon } from "helpers/assets";
+import { navItems } from "helpers/helpers";
 
-export default function NavBar({ navItems }) {
+export default function NavBar() {
   return (
     <header className={`container ${classes.header}`}>
       <nav className={classes.navigation}>
