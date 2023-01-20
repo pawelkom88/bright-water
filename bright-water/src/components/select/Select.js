@@ -1,12 +1,17 @@
 import classes from "./Select.module.scss";
 
-export default function Select() {
+export default function Select({ onSort }) {
   return (
-    // change default value to Sort By / fix hover
-    <select defaultValue="Sort By" className={classes.select}>
-      <option value="ASC">Product Name - ASC</option>
-      <option value="DESC">Product Name - DESC</option>
-      <option value="PRICE">Product Price</option>
+    <select
+      onChange={e => onSort(e.target.value)}
+      defaultValue="default"
+      className={classes.select}>
+      <option value="default" disabled>
+        Sort By
+      </option>
+      <option value="ascending">Product Name - ASC</option>
+      <option value="descending">Product Name - DESC</option>
+      <option value="price">Product Price</option>
     </select>
   );
 }
