@@ -6,7 +6,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
-  padding: 4rem 0;
+  padding: 6rem 0;
+
+  @media (max-width: $tablet) {
+    padding: 3rem auto;
+  }
 }
 
 .heading {
@@ -63,7 +67,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 0.5rem 1.5rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
   @include transition(all, 0.2s, ease-in-out);
 
   &:hover {
