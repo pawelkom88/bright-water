@@ -24,3 +24,10 @@ export function removeDuplicateObjects(array, property) {
 
   return unique;
 }
+
+export const sortMethods = {
+  default: { method: (a, b) => null },
+  ascending: { method: (a, b) => a.name > b.name },
+  descending: { method: (a, b) => b.name > a.name },
+  price: { method: (a, b) => a.price.raw - b.price.raw },
+};
