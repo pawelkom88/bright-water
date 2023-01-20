@@ -11,12 +11,15 @@ export default function ProductList({ products }) {
   const [sortState, setSortState] = useState("default");
   const [sortedProducts, setSortedProducts] = useState(null);
 
-  // Check whether products has been fetched and then update local state
   useEffect(() => {
     if (products) {
-      setSortedProducts(products);
+      setSortedProducts(sortHandler(products));
     }
-  }, [products]);
+  }, [products, setSortedProducts, sortState]);
+
+  function sortHandler(products) {
+    return [...products].sort(sortMethods[sortState].method);
+  }
 
   return (
     <main className="container">
@@ -29,9 +32,8 @@ export default function ProductList({ products }) {
         </div>
         <div className={classes.products}>
           {sortedProducts?.length ? (
-            sortedProducts.sort(sortMethods[sortState].method)
-              .map(product => {
-                return <ProductCard key={product.id} productDetails={product} />;
+            sortedProducts.map(product => {
+              return <ProductCard key={product.id} productDetails={product} />;
             })
           ) : (
             <Spinner />
