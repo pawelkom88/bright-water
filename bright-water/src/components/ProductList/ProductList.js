@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
+import { sortMethods } from "helpers/helpers";
 import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
 import Select from "components/select/Select";
 import Button from "components/Button/Button";
-import { sortMethods } from "helpers/helpers";
 import classes from "./productList.module.scss";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductList({ products }) {
   const [sortState, setSortState] = useState("default");
-  const [sortedProducts, setSortedProducts] = useState(null);
+  const [sortedProducts, setSortedProducts] = useState([]);
 
   useEffect(() => {
-    if (products) {
+    if (products.length) {
       setSortedProducts(sortHandler(products));
     }
-  }, [products, setSortedProducts, sortState]);
+  }, [products, sortState]);
 
   function sortHandler(products) {
     return [...products].sort(sortMethods[sortState].method);

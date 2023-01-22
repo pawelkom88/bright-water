@@ -1,10 +1,10 @@
 export const navItems = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
 ];
 
 export function stripHTMLTag(str) {
-  return str?.replace(/(<([^>]+)>)/gi, "");
+  return str?.replace(/(<([^>]+)>)/gi, '');
 }
 
 export function removeDuplicateObjects(array, property) {
@@ -12,7 +12,6 @@ export function removeDuplicateObjects(array, property) {
 
   const unique = array?.filter(element => {
     const isDuplicate = uniqueIds.includes(element[property]);
-
     if (!isDuplicate) {
       uniqueIds.push(element[property]);
 
@@ -27,7 +26,8 @@ export function removeDuplicateObjects(array, property) {
 
 export const sortMethods = {
   default: { method: (a, b) => null },
-  ascending: { method: (a, b) => a.name > b.name },
-  descending: { method: (a, b) => b.name > a.name },
+  // ascending: { method: (a, b) => a.name > b.name },
+  ascending: { method: (a, b) => a.name.localeCompare(b.name, 'en') },
+  descending: { method: (a, b) => b.name.localeCompare(a.name, 'en') },
   price: { method: (a, b) => a.price.raw - b.price.raw },
 };
