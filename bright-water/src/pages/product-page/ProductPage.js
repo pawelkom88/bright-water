@@ -8,7 +8,7 @@ import { BackIcon, HeartIcon, HeartFilledIcon } from "helpers/assets";
 import { stripHTMLTag, removeDuplicateObjects } from "helpers/helpers";
 import classes from "./productPage.module.scss";
 
-export default function ProductPage() {
+export default function ProductPage({ cartItems, onAdd }) {
   const { product } = useFetchProduct();
   const { name, assets, image, description, price } = product || {};
   const [selectedImage, setSelectedImage] = useState(null);
@@ -24,6 +24,33 @@ export default function ProductPage() {
   ) : (
     <img src={HeartIcon.src} alt={HeartIcon.alt} />
   );
+
+  function AddToCartHandler(product) {
+    // copy cart items to avoid data mutation
+    const newItems = [...cartItems];
+
+    // find object in cartItems that matches the passed one
+    const index = cartItems.findIndex(item => item.id === product.id);
+
+    const productData = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+    };
+
+    // if an item has not been added, copy existing items and add a new one
+    if (index === -1) {
+      newItems.push({ ...productData, quantity: 1 });
+    } else {
+      // if the item exist in the array, copy all items and modify the matching one by increasing value on quantity property
+      const productData = newItems[index];
+      newItems[index] = { ...productData, quantity: productData.quantity + 1 };
+    }
+    // update cart with new items
+    onAdd(newItems);
+  }
 
   return (
     <section className="container">
@@ -66,7 +93,9 @@ export default function ProductPage() {
               <p className={classes["card-description__content"]}>{modifiedDescription}</p>
               <p className={classes["card-description__price"]}>{price.formatted_with_symbol}</p>
               <div className={classes["card-description__action"]}>
-                <Button className={classes.button}>Add to Cart</Button>
+                <Button onClick={() => AddToCartHandler(product)} className={classes.button}>
+                  Add to Cart
+                </Button>
                 <QuantityStepper />
               </div>
             </div>

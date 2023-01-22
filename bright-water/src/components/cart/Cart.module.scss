@@ -1,6 +1,31 @@
 @import "styles/mixins";
+@import "styles/breakpoints";
+@import "styles/variables";
 
 .cart {
   max-width: 2.5rem;
   @include icon-hover-effect;
+
+  &-quantity {
+    position: relative;
+  }
+
+  &-quantity::before {
+    position: absolute;
+    top: 2rem;
+    left: .3rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    @include flex(center, center);
+    font-size: 1rem;
+    content: attr(data-count);
+    background-color: $brand-secondary;
+    color: $white;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &-buttons button{
+    margin: 1rem
+  }
 }

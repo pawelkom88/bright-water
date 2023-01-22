@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "pages/home/Home";
 import NavBar from "components/NavBar/Nav-bar";
@@ -9,10 +10,13 @@ import { navItems } from "helpers/helpers";
 import "styles/App.scss";
 
 const App = () => {
+
+const [addToCart, setAddToCart] = useState([])
+
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBar cartItems={addToCart}/>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -21,7 +25,7 @@ const App = () => {
             <About />
           </Route>
           <Route exact path="/product/:id">
-            <ProductPage />
+            <ProductPage cartItems={addToCart} onAdd={setAddToCart}/>
           </Route>
           <Route path="*">
             <NotFound />
