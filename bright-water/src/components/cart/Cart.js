@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CartItem from "components/cart-item/CartItem";
 import MenuRight from "components/sidebar-menu/menu-right/MenuRight";
 import Button from "components/Button/Button";
@@ -20,14 +21,19 @@ export default function Cart({ cartItems }) {
       </Button>
 
       <MenuRight onToggle={handleSidebar} condition={toggleCart}>
-        {!cartItems?.length && <p>Cart is empty</p>}
-        {cartItems?.map(item => {
-          return <CartItem key={item.id} itemDetails={item} />;
-        })}
-        <div className={classes["cart-buttons"]}>
-          <Button>Clear All</Button>
-          <Button>Checkout</Button>
-        </div>
+        {!cartItems?.length ? (
+          <p>Cart is empty</p>
+        ) : (
+          <>
+            {cartItems?.map(item => {
+              return <CartItem key={item.id} itemDetails={item} />;
+            })}
+            <div className={classes["cart-buttons"]}>
+              <Button>Clear All</Button>
+              <Link to="/checkout">Checkout</Link>
+            </div>
+          </>
+        )}
       </MenuRight>
     </>
   );
