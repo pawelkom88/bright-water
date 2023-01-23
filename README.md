@@ -30,4 +30,6 @@ If I had more time I would:
 
 Here is a working [live demo ](https://brightwater1.netlify.app/)
 
+### LIVE VERSION HAS BEEN UPDATED AND DEVELOPED CLOSING DATE AS A CHALLENGE !
+
 I really enjoyed it ! 
