@@ -1,9 +1,16 @@
 import classes from "./QualityStepper.module.scss";
 
-export default function QuantityStepper() {
+export default function QuantityStepper({ quantity, onChange }) {
   return (
     <div className={classes["stepper-input"]}>
-      <input type="number" id="quantity" name="quantity" min="1" />
+      <input
+        onChange={e => onChange(+e.target.value)}
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="1"
+        value={quantity}
+      />
     </div>
   );
 }
