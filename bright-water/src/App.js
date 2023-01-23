@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <NavBar cartItems={addToCart} />
+        <NavBar onAdd={setAddToCart} cartItems={addToCart} />
         <Switch>
           <Route exact path="/">
             <Home />

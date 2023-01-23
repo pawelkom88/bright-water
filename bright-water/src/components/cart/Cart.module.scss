@@ -13,7 +13,7 @@
   &-quantity::before {
     position: absolute;
     top: 2rem;
-    left: .3rem;
+    left: 0.3rem;
     width: 1.4rem;
     height: 1.4rem;
     @include flex(center, center);
@@ -24,8 +24,54 @@
     border-radius: 50%;
     z-index: 1;
   }
+}
 
-  &-buttons button{
-    margin: 1rem
+.cart-buttons {
+  @include flex(space-around, center);
+}
+
+.button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  padding: 0.5rem 1.5rem;
+  border: 2px solid transparent;
+  @include transition(all, 0.2s, ease-in-out);
+}
+
+.button-remove {
+  color: $white;
+  background-color: $danger;
+
+  &:hover {
+    color: $danger;
+    background-color: $white;
+    border: 2px solid $danger;
+  }
+}
+
+.button-cancel {
+  color: $white;
+  background-color: $success;
+
+  &:hover {
+    color: $dark-clr;
+    background-color: $white;
+    border: 2px solid $brand-primary;
+  }
+}
+
+.button-checkout {
+  color: $white;
+  background-color: $brand-primary;
+
+  &:hover {
+    color: $dark-clr;
+    background-color: $white;
+    border: 2px solid $brand-primary;
   }
 }
