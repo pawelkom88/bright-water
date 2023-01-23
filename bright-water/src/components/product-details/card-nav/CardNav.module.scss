@@ -1,0 +1,29 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+$border-opacity: rgba(20, 54, 93, 0.1);
+
+.card-navigation {
+  width: 100%;
+  height: 3rem;
+
+  @include flex(space-between, center);
+  padding: 0 1rem;
+  border-bottom: 1px solid $border-opacity;
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    opacity: 0.6;
+    @include transition(all, 0.2s, ease-in-out);
+
+    &:hover {
+      color: $brand-primary;
+      opacity: 1;
+      @include transition(all, 0.2s, ease-in-out);
+    }
+  }
+}
