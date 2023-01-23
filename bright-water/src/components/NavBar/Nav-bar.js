@@ -5,7 +5,7 @@ import classes from "./Nav-bar.module.scss";
 import { logoIcon } from "helpers/assets";
 import { navItems } from "helpers/helpers";
 
-export default function NavBar({ cartItems }) {
+export default function NavBar({ cartItems, onAdd }) {
   return (
     <header className={`container ${classes.header}`}>
       <nav className={classes.navigation}>
@@ -21,7 +21,7 @@ export default function NavBar({ cartItems }) {
       <Link to="/">
         <img className={classes.logo} src={logoIcon.src} alt={logoIcon.alt} />
       </Link>
-      <Cart cartItems={cartItems} />
+      <Cart onAdd={onAdd} cartItems={cartItems} />
     </header>
   );
 }
