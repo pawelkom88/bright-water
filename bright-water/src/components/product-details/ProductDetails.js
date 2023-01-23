@@ -11,13 +11,17 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [addToWishlist, setAddToWishlist] = useState(false);
   const [notifyUser, setNotifyUser] = useState(false);
+  const [quantity, setQuantity] = useState(null);
+  
   // some images are duplicated
   const filteredAssets = removeDuplicateObjects(assets, "id");
 
   const modifiedDescription = stripHTMLTag(description);
 
   function AddToCartHandler(product) {
+    // reset state
     setNotifyUser(false);
+
     // copy cart items to avoid data mutation
     const newItems = [...cartItems];
 
@@ -38,11 +42,16 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
     } else {
       // if the item exist in the array, copy all items and modify the matching one by increasing value on quantity property
       const productData = newItems[index];
+
+      // TO BE DONE
+      // const productQuantity = quantity ? quantity : productData.quantity + 1;
+
       newItems[index] = { ...productData, quantity: productData.quantity + 1 };
     }
     // update cart with new items
     onAdd(newItems);
 
+    // notify user
     setNotifyUser(true);
   }
 
@@ -80,14 +89,14 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
               <Button onClick={() => AddToCartHandler(product)} className={classes.button}>
                 Add to Cart
               </Button>
-              <QuantityStepper />
+              <QuantityStepper quantity={quantity} onChange={setQuantity} />
             </div>
           </div>
         </div>
       </div>
 
       {notifyUser && (
-        <Notification onNotify={setNotifyUser} heading="Success">
+        <Notification onNotify={setNotifyUser} time={4000} heading="Success">
           Item has been added to the cart
         </Notification>
       )}
