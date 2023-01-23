@@ -5,7 +5,7 @@ import Modal from "components/modal/Modal";
 import Banner from "components/banner/Banner";
 
 export default function Home() {
-  const { products } = useFetchProducts();
+  const { products, error } = useFetchProducts();
 
   return (
     <>
@@ -14,6 +14,8 @@ export default function Home() {
       <Modal size="30rem">
         <Banner />
       </Modal>
+
+      {error && <Modal size="20rem">{error}</Modal>}
     </>
   );
 }
