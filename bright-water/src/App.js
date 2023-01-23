@@ -8,15 +8,15 @@ import ProductPage from "pages/product-page/ProductPage";
 import NotFound from "pages/404/NotFound";
 import { navItems } from "helpers/helpers";
 import "styles/App.scss";
+import Checkout from "pages/checkout/Checkout";
 
 const App = () => {
-
-const [addToCart, setAddToCart] = useState([])
+  const [addToCart, setAddToCart] = useState([]);
 
   return (
     <>
       <Router>
-        <NavBar cartItems={addToCart}/>
+        <NavBar cartItems={addToCart} />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -25,7 +25,10 @@ const [addToCart, setAddToCart] = useState([])
             <About />
           </Route>
           <Route exact path="/product/:id">
-            <ProductPage cartItems={addToCart} onAdd={setAddToCart}/>
+            <ProductPage cartItems={addToCart} onAdd={setAddToCart} />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
           <Route path="*">
             <NotFound />
