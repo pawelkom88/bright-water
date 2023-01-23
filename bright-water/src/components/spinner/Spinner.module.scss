@@ -1,5 +1,6 @@
 @import "styles/variables";
 @import "styles/mixins";
+@import "styles/animation";
 
 .container {
   width: 100%;
@@ -15,11 +16,5 @@
   border-top-color: $brand-primary;
   border-radius: 50%;
   pointer-events: none;
-  animation: loadingspin 1s linear infinite;
-}
-
-@keyframes loadingspin {
-  100% {
-    transform: rotate(360deg);
-  }
+  @include spin-360;
 }
