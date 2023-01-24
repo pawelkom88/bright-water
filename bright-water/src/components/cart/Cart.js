@@ -30,7 +30,6 @@ export default function Cart({ cartItems, onAdd }) {
         <span className={classes["cart-quantity"]} data-count={cartItems.length}></span>
         <img className={classes.cart} src={cartIcon.src} alt={cartIcon.alt} />
       </Button>
-
       <MenuRight onToggle={handleSidebar} condition={toggleCart}>
         {!cartItems?.length ? (
           <p>Cart is empty</p>
@@ -41,14 +40,12 @@ export default function Cart({ cartItems, onAdd }) {
                 <CartItem key={item.id} itemDetails={item} cartItems={cartItems} onAdd={onAdd} />
               );
             })}
-
             <div className={classes["cart-buttons"]}>
               <Button
                 className={`${classes.button} ${classes["button-remove"]}`}
                 onClick={handleRemoveAll}>
                 Clear All
               </Button>
-
               <Link
                 onClick={handleSidebar}
                 className={`${classes.button} ${classes["button-checkout"]}`}
