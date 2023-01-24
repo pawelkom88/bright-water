@@ -1,11 +1,16 @@
 @import "styles/mixins";
 @import "styles/variables";
+@import "styles/breakpoints";
 
 .cart-item {
   @include flex(center, center);
   border-bottom: 1px solid rgba($dark-clr, 0.2);
   padding-bottom: 1rem;
   margin: 1rem;
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+  }
 
   &__image {
     border: 1px solid rgba($dark-clr, 0.2);
@@ -15,7 +20,7 @@
   &__name {
     opacity: 0.7;
   }
-
+  
   &__name,
   &__action {
     height: 100%;
@@ -25,6 +30,7 @@
   }
 
   &__price {
+    font-weight: bold;
   }
 
   &__remove {

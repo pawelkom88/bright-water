@@ -1,11 +1,25 @@
 @import "styles/variables";
 
-.stepper-input {
-  height: 2.2rem;
+.stepper {
   display: flex;
+  overflow: hidden;
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    border: 1px solid $dark-clr;
+
+    &__btn {
+      width: 1.5rem;
+      height: 100%;
+      color: $white;
+      background-color: $dark-clr;
+    }
+  }
 
   & input {
     width: 4rem;
-    border: 1px solid $brand-primary;
+    height: 2.1rem;
+    border: transparent;
   }
 }

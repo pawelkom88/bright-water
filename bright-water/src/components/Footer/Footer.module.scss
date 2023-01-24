@@ -42,11 +42,9 @@
 .footer-col {
   display: flex;
   flex-direction: column;
-  align-self: stretch;
 
   @media (max-width: $mobile) {
-    align-self: baseline;
-    margin-right: auto;
+    flex: 1;
   }
 
   &__heading {
