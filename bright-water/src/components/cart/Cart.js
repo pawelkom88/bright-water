@@ -49,7 +49,10 @@ export default function Cart({ cartItems, onAdd }) {
                 Clear All
               </Button>
 
-              <Link className={`${classes.button} ${classes["button-checkout"]}`} to="/checkout">
+              <Link
+                onClick={handleSidebar}
+                className={`${classes.button} ${classes["button-checkout"]}`}
+                to="/checkout">
                 Checkout
               </Link>
             </div>

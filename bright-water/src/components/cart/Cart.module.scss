@@ -14,8 +14,10 @@
     position: absolute;
     top: 2rem;
     left: 0.3rem;
+    
     width: 1.4rem;
     height: 1.4rem;
+
     @include flex(center, center);
     font-size: 1rem;
     content: attr(data-count);
@@ -41,6 +43,10 @@
   padding: 0.5rem 1.5rem;
   border: 2px solid transparent;
   @include transition(all, 0.2s, ease-in-out);
+
+  @media (max-width: $mobile){
+    font-size: .6rem;
+  }
 }
 
 .button-remove {
