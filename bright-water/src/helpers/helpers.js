@@ -1,10 +1,10 @@
 export const navItems = [
-  { name: 'Home', link: '/' },
-  { name: 'About', link: '/about' },
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
 ];
 
 export function stripHTMLTag(str) {
-  return str?.replace(/(<([^>]+)>)/gi, '');
+  return str?.replace(/(<([^>]+)>)/gi, "");
 }
 
 export function removeDuplicateObjects(array, property) {
@@ -27,7 +27,105 @@ export function removeDuplicateObjects(array, property) {
 export const sortMethods = {
   default: { method: (a, b) => null },
   // ascending: { method: (a, b) => a.name > b.name },
-  ascending: { method: (a, b) => a.name.localeCompare(b.name, 'en') },
-  descending: { method: (a, b) => b.name.localeCompare(a.name, 'en') },
+  ascending: { method: (a, b) => a.name.localeCompare(b.name, "en") },
+  descending: { method: (a, b) => b.name.localeCompare(a.name, "en") },
   price: { method: (a, b) => a.price.raw - b.price.raw },
 };
+
+export const colors = [
+  {
+    color: "indian red",
+    code: {
+      hex: "#B0171F",
+    },
+    id: 1,
+  },
+
+  {
+    color: "crimson	",
+    code: {
+      hex: "#DC143C	",
+    },
+    id: 2,
+  },
+
+  {
+    color: "lightpink	",
+    code: {
+      hex: "#FFB6C1	",
+    },
+    id: 4,
+  },
+
+  {
+    color: "lightpink 3	 ",
+    code: {
+      hex: "#CD8C95	",
+    },
+    id: 6,
+  },
+
+  {
+    color: "lightpink 4	 ",
+    code: {
+      hex: "#8B5F65	",
+    },
+    id: 7,
+  },
+
+  {
+    color: "pink	",
+    code: {
+      hex: "#FFC0CB	",
+    },
+    id: 8,
+  },
+
+  {
+    color: "palevioletred	",
+    code: {
+      hex: "#DB7093",
+    },
+    id: 13,
+  },
+
+  {
+    color: "lavenderblush 1 (lavenderblush)	",
+    code: {
+      hex: "#FFF0F5",
+    },
+    id: 18,
+  },
+
+  {
+    color: "violetred 1	",
+    code: {
+      hex: "#FF3E96",
+    },
+    id: 22,
+  },
+
+  {
+    color: "violetred 2	",
+    code: {
+      hex: "#EE3A8C",
+    },
+    id: 23,
+  },
+
+  {
+    color: "darkgoldenrod 3",
+    code: {
+      hex: "#CD950C",
+    },
+    id: 292,
+  },
+
+  {
+    color: "brick",
+    code: {
+      hex: "#9C661F",
+    },
+    id: 314,
+  },
+];
