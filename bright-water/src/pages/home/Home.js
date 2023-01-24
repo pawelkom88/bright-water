@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <TopBannerSection />
-      <ProductsList products={products} />
+      <ProductsList products={products} requestError={error}/>
       <Modal size="30rem">
         <Banner />
       </Modal>
