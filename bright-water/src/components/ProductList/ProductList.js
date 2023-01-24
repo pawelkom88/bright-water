@@ -4,10 +4,10 @@ import Spinner from "components/spinner/Spinner";
 import ProductsFilter from "components/ProductsFilter/ProductsFilter";
 import Select from "components/select/Select";
 import Button from "components/Button/Button";
-import classes from "./productList.module.scss";
 import ProductCard from "../ProductCard/ProductCard";
+import classes from "./productList.module.scss";
 
-export default function ProductList({ products }) {
+export default function ProductList({ products,requestError }) {
   const [sortState, setSortState] = useState("default");
   const [sortedProducts, setSortedProducts] = useState([]);
 
@@ -31,7 +31,7 @@ export default function ProductList({ products }) {
           <Select onSort={setSortState} />
         </div>
         <div className={classes.products}>
-          {sortedProducts?.length ? (
+          {sortedProducts?.length && !requestError ? (
             sortedProducts.map(product => {
               return <ProductCard key={product.id} productDetails={product} />;
             })
