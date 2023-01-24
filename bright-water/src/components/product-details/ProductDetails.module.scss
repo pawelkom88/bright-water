@@ -13,8 +13,6 @@ $border-opacity: rgba(20, 54, 93, 0.1);
   }
 }
 
-
-
 .card-body {
   height: 35rem;
   display: flex;
@@ -109,4 +107,19 @@ $border-opacity: rgba(20, 54, 93, 0.1);
     background-color: $white;
     border: 2px solid $brand-primary;
   }
+}
+
+.color-selection {
+  width: 100%;
+  @include flex(flex-start, center);
+  margin: 1rem 0;
+}
+
+.circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  border: 1px solid rgb(179, 179, 179);
+  margin-right: 0.7rem;
+  cursor: pointer;
 }

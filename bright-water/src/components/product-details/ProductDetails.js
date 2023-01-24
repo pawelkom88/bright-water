@@ -6,13 +6,21 @@ import Button from "components/Button/Button";
 import { stripHTMLTag, removeDuplicateObjects } from "helpers/helpers";
 import classes from "./ProductDetails.module.scss";
 
+const randomClr = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const options = Array(4).fill({ color: randomClr });
+
 export default function ProductDetails({ cartItems, product, onAdd }) {
   const { name, assets, image, description, price } = product || {};
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [addToWishlist, setAddToWishlist] = useState(false);
   const [notifyUser, setNotifyUser] = useState(false);
-  const [quantity, setQuantity] = useState(null);
-  
+  const [borderClr, setBorderClr] = useState("");
+
+  function handleBottleColor(color) {
+    setBorderClr(color);
+  }
+
   // some images are duplicated
   const filteredAssets = removeDuplicateObjects(assets, "id");
 
@@ -62,7 +70,11 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
 
         <div className={classes["card-body"]}>
           <div className={classes["card-image"]}>
-            <img src={selectedImage ? selectedImage : image?.url} alt={name} />
+            <img
+              style={{ border: borderClr ? `3px solid ${borderClr}` : "" }}
+              src={selectedImage ? selectedImage : image?.url}
+              alt={name}
+            />
 
             <div className={classes["card-images"]}>
               {filteredAssets?.map(({ id, url }) => {
@@ -84,12 +96,26 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
           <div className={classes["card-description"]}>
             <h1 className={classes["card-description__heading"]}>{name}</h1>
             <p className={classes["card-description__content"]}>{modifiedDescription}</p>
+            <div className={classes["color-selection"]}>
+              {options?.map(({ color }, index) => {
+                return (
+                  <div
+                    onClick={() => handleBottleColor(color)}
+                    tabIndex={0}
+                    style={{
+                      backgroundColor: randomClr,
+                    }}
+                    key={index}
+                    className={classes.circle}></div>
+                );
+              })}
+            </div>
             <p className={classes["card-description__price"]}>{price.formatted_with_symbol}</p>
             <div className={classes["card-description__action"]}>
               <Button onClick={() => AddToCartHandler(product)} className={classes.button}>
                 Add to Cart
               </Button>
-              <QuantityStepper quantity={quantity} onChange={setQuantity} />
+              <QuantityStepper />
             </div>
           </div>
         </div>
