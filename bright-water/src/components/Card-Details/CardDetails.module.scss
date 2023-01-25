@@ -2,7 +2,6 @@
 @import "styles/breakpoints";
 @import "styles/variables";
 
-
 .card-description {
   @include flex(center, flex-start);
   flex-direction: column;
@@ -61,4 +60,8 @@
   width: 100%;
   @include flex(flex-start, center);
   margin: 1rem 0;
+
+  @media (max-width: $mobile) {
+    @include flex(center, center);
+  }
 }
