@@ -1,5 +1,5 @@
-import CardDetails from "components/Card-Details/CardDetails";
 import { useState } from "react";
+import CardDetails from "components/Card-Details/CardDetails";
 import CardSlider from "components/Card-Slider/CardSlider";
 import CardNav from "components/product-details/card-nav/CardNav";
 import Notification from "components/notification/Notification";
@@ -57,8 +57,11 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
           <div className={classes["card-image"]}>
             <img
               style={{ border: borderClr ? `3px solid ${borderClr}` : "" }}
-              src={selectedImage ? selectedImage : image?.url}
+              src={selectedImage ? selectedImage.url : image?.url}
               alt={name}
+              onClick={() => setSelectedImage({ ...selectedImage, animate: 1 })}
+              onAnimationEnd={() => setSelectedImage({ ...selectedImage, animate: 0 })}
+              animate={selectedImage?.animate}
             />
             <CardSlider assets={assets} onSelect={setSelectedImage} />
           </div>
