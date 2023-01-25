@@ -1,0 +1,67 @@
+@import "styles/mixins";
+@import "styles/breakpoints";
+@import "styles/variables";
+
+.card-description {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  flex: 1 0 50%;
+  padding: 0 5rem;
+
+  @media (max-width: $tablet) {
+    padding: 2rem;
+  }
+
+  &__heading {
+    font-size: clamp(1.5rem, 0.7rem + 2vw, 3.5rem);
+    color: $brand-primary;
+  }
+
+  &__content {
+    font-size: clamp(1rem, 0.6rem + 0.7vw, 1.8rem);
+  }
+
+  &__price {
+    font-size: 2rem;
+    color: $brand-secondary;
+  }
+
+  &__action {
+    @include flex(flex-start, center);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $mobile) {
+    @include flex(center, center);
+  }
+}
+
+.button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  padding: 0.5rem 1.5rem;
+  margin-right: 1rem;
+  border: 2px solid transparent;
+  @include transition(all, 0.2s, ease-in-out);
+
+  &:hover {
+    color: $dark-clr;
+    background-color: $white;
+    border: 2px solid $brand-primary;
+  }
+}
+
+.color-selection {
+  width: 100%;
+  @include flex(flex-start, center);
+  margin: 1rem 0;
+
+  @media (max-width: $mobile) {
+    @include flex(center, center);
+  }
+}

@@ -1,6 +1,83 @@
 @import "styles/mixins";
+@import "styles/breakpoints";
+@import "styles/variables";
 
 .cart {
   max-width: 2.5rem;
   @include icon-hover-effect;
+
+  &-quantity {
+    position: relative;
+  }
+
+  &-quantity::before {
+    position: absolute;
+    top: 2rem;
+    left: 0.3rem;
+    
+    width: 1.4rem;
+    height: 1.4rem;
+
+    @include flex(center, center);
+    font-size: 1rem;
+    content: attr(data-count);
+    background-color: $brand-secondary;
+    color: $white;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+.cart-buttons {
+  @include flex(space-around, center);
+}
+
+.button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  padding: 0.5rem 1.5rem;
+  border: 2px solid transparent;
+  @include transition(all, 0.2s, ease-in-out);
+
+  @media (max-width: $mobile){
+    font-size: .6rem;
+  }
+}
+
+.button-remove {
+  color: $white;
+  background-color: $danger;
+
+  &:hover {
+    color: $danger;
+    background-color: $white;
+    border: 2px solid $danger;
+  }
+}
+
+.button-cancel {
+  color: $white;
+  background-color: $success;
+
+  &:hover {
+    color: $dark-clr;
+    background-color: $white;
+    border: 2px solid $brand-primary;
+  }
+}
+
+.button-checkout {
+  color: $white;
+  background-color: $brand-primary;
+
+  &:hover {
+    color: $dark-clr;
+    background-color: $white;
+    border: 2px solid $brand-primary;
+  }
 }

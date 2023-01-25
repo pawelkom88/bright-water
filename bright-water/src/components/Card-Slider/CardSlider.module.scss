@@ -1,0 +1,19 @@
+@import "styles/mixins";
+@import "styles/breakpoints";
+@import "styles/animation";
+
+.slider-images {
+  width: 100%;
+  height: 20%;
+  @include flex(space-around, center);
+  padding: 0 2rem;
+
+  .slider-thumbnail {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
