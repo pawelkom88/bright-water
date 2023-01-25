@@ -1,13 +1,14 @@
 @import "styles/mixins";
 @import "styles/breakpoints";
+@import "styles/animation";
 
-.card-images {
+.slider-images {
   width: 100%;
   height: 20%;
   @include flex(space-around, center);
   padding: 0 2rem;
 
-  & img {
+  .slider-thumbnail {
     width: 4rem;
     height: 4rem;
   }
