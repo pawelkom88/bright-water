@@ -59,6 +59,7 @@
 .color-selection {
   width: 100%;
   @include flex(flex-start, center);
+  flex-wrap: wrap;
   margin: 1rem 0;
 
   @media (max-width: $mobile) {
