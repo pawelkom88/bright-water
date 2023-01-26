@@ -28,7 +28,7 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
 
     // if an item has not been added, copy existing items and add a new one
     if (index === -1) {
-      newItems.push({ ...productData, quantity: 1 });
+      newItems.push({ ...productData, quantity: quantity ? quantity : 1 });
     } else {
       // if the item exist in the array, copy all items and modify the matching one by increasing value on quantity property
       const productData = newItems[index];
