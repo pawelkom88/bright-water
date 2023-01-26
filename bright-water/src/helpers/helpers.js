@@ -42,35 +42,11 @@ export const colors = [
   },
 
   {
-    color: "crimson	",
-    code: {
-      hex: "#DC143C	",
-    },
-    id: 2,
-  },
-
-  {
     color: "lightpink	",
     code: {
       hex: "#FFB6C1	",
     },
-    id: 4,
-  },
-
-  {
-    color: "lightpink 3	 ",
-    code: {
-      hex: "#CD8C95	",
-    },
-    id: 6,
-  },
-
-  {
-    color: "lightpink 4	 ",
-    code: {
-      hex: "#8B5F65	",
-    },
-    id: 7,
+    id: 2,
   },
 
   {
@@ -78,7 +54,7 @@ export const colors = [
     code: {
       hex: "#FFC0CB	",
     },
-    id: 8,
+    id: 3,
   },
 
   {
@@ -86,7 +62,7 @@ export const colors = [
     code: {
       hex: "#DB7093",
     },
-    id: 13,
+    id: 4,
   },
 
   {
@@ -94,15 +70,7 @@ export const colors = [
     code: {
       hex: "#FFF0F5",
     },
-    id: 18,
-  },
-
-  {
-    color: "violetred 1	",
-    code: {
-      hex: "#FF3E96",
-    },
-    id: 22,
+    id: 5,
   },
 
   {
@@ -110,7 +78,7 @@ export const colors = [
     code: {
       hex: "#EE3A8C",
     },
-    id: 23,
+    id: 6,
   },
 
   {
@@ -118,14 +86,6 @@ export const colors = [
     code: {
       hex: "#CD950C",
     },
-    id: 292,
-  },
-
-  {
-    color: "brick",
-    code: {
-      hex: "#9C661F",
-    },
-    id: 314,
+    id: 7,
   },
 ];
