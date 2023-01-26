@@ -1,18 +1,17 @@
 import Button from "components/Button/Button";
 import classes from "./QualityStepper.module.scss";
-import { useState } from "react";
-export default function QuantityStepper() {
-  const [quantity, setQuantity] = useState(0);
 
+export default function QuantityStepper({ quantity, onQuantityChange }) {
+  
   function increaseQuantity() {
-    setQuantity(prevQuantity => prevQuantity + 1);
+    onQuantityChange(prevQuantity => prevQuantity + 1);
   }
 
   function decreaseQuantity() {
     if (quantity < 1) {
       return;
     }
-    setQuantity(prevQuantity => prevQuantity - 1);
+    onQuantityChange(prevQuantity => prevQuantity - 1);
   }
 
   return (
@@ -26,7 +25,7 @@ export default function QuantityStepper() {
         </Button>
         <span>
           <input
-            onChange={e => setQuantity(+e.target.value)}
+            onChange={e => onQuantityChange(+e.target.value)}
             type="number"
             id="quantity"
             name="quantity"

@@ -4,7 +4,7 @@ import Button from "components/Button/Button";
 import { stripHTMLTag, colors } from "helpers/helpers";
 import classes from "./CardDetails.module.scss";
 
-export default function CardDetails({ cartHandler, product, onSet }) {
+export default function CardDetails({ cartHandler, product, onSet, onQuantityChange, quantity }) {
   const { name, description, price } = product || {};
 
   const modifiedDescription = stripHTMLTag(description);
@@ -18,7 +18,7 @@ export default function CardDetails({ cartHandler, product, onSet }) {
       <h1 className={classes["card-description__heading"]}>{name}</h1>
       <p className={classes["card-description__content"]}>{modifiedDescription}</p>
       <div className={classes["color-selection"]}>
-        {colors.slice(colors.length / 2)?.map(({ id, code }) => {
+        {colors?.map(({ id, code }) => {
           return <ColorCircle key={id} onSet={handleBottleColor} code={code} />;
         })}
       </div>
@@ -27,7 +27,7 @@ export default function CardDetails({ cartHandler, product, onSet }) {
         <Button onClick={() => cartHandler(product)} className={classes.button}>
           Add to Cart
         </Button>
-        <QuantityStepper />
+        <QuantityStepper quantity={quantity} onQuantityChange={onQuantityChange} />
       </div>
     </div>
   );

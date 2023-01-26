@@ -1,21 +1,17 @@
 import { useState } from "react";
 import CardDetails from "components/Card-Details/CardDetails";
-import CardSlider from "components/Card-Slider/CardSlider";
 import CardNav from "components/product-details/card-nav/CardNav";
 import Notification from "components/notification/Notification";
 import classes from "./ProductDetails.module.scss";
+import CardImage from "components/Card-Image/CardImage";
 
 export default function ProductDetails({ cartItems, product, onAdd }) {
-  const { name, assets, image } = product || {};
-  const [selectedImage, setSelectedImage] = useState(null);
   const [addToWishlist, setAddToWishlist] = useState(false);
   const [notifyUser, setNotifyUser] = useState(false);
   const [borderClr, setBorderClr] = useState("");
+  const [quantity, setQuantity] = useState(0);
 
   function AddToCartHandler(product) {
-    // reset state
-    setNotifyUser(false);
-
     // copy cart items to avoid data mutation
     const newItems = [...cartItems];
 
@@ -37,10 +33,10 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
       // if the item exist in the array, copy all items and modify the matching one by increasing value on quantity property
       const productData = newItems[index];
 
-      // TO BE DONE
-      // const productQuantity = quantity ? quantity : productData.quantity + 1;
-
-      newItems[index] = { ...productData, quantity: productData.quantity + 1 };
+      newItems[index] = {
+        ...productData,
+        quantity: quantity ? quantity : productData.quantity + 1,
+      };
     }
     // update cart with new items
     onAdd(newItems);
@@ -54,18 +50,14 @@ export default function ProductDetails({ cartItems, product, onAdd }) {
       <div className={classes.card}>
         <CardNav setAddToWishlist={setAddToWishlist} addToWishlist={addToWishlist} />
         <div className={classes["card-body"]}>
-          <div className={classes["card-image"]}>
-            <img
-              style={{ border: borderClr ? `3px solid ${borderClr}` : "" }}
-              src={selectedImage ? selectedImage.url : image?.url}
-              alt={name}
-              onClick={() => setSelectedImage({ ...selectedImage, animate: 1 })}
-              onAnimationEnd={() => setSelectedImage({ ...selectedImage, animate: 0 })}
-              animate={selectedImage?.animate}
-            />
-            <CardSlider assets={assets} onSelect={setSelectedImage} />
-          </div>
-          <CardDetails cartHandler={AddToCartHandler} product={product} onSet={setBorderClr} />
+          <CardImage product={product} border={borderClr} />
+          <CardDetails
+            cartHandler={AddToCartHandler}
+            product={product}
+            onSet={setBorderClr}
+            quantity={quantity}
+            onQuantityChange={setQuantity}
+          />
         </div>
       </div>
 

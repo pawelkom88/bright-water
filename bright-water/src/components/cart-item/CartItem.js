@@ -12,13 +12,12 @@ export default function CartItem({ cartItems, itemDetails, onAdd }) {
     if (selectedItem.quantity > 1) {
       newItems[index] = { ...selectedItem, quantity: selectedItem.quantity - 1 };
 
-      onAdd([...newItems, newItems[index]]);
-
+      onAdd([...newItems]);
+      
     } else {
       onAdd(newItems.filter(item => item.id !== id));
     }
   }
-
   return (
     <div className={classes["cart-item"]}>
       <img width={80} className={classes["cart-item__image"]} src={image.url} alt={image.alt} />
